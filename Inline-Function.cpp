@@ -1,10 +1,12 @@
-//1. Write an inline function to calculate the cube of a number.
-//->
+/*
+Write an inline function to calculate the cube of a number.
+
 #include <iostream>
 using namespace std;
 inline int cube(int n) {
     return n * n * n;
 }
+
 int main() {
     int n;
     cout << "Enter a number: ";
@@ -12,8 +14,10 @@ int main() {
     cout<<"Cube:"<<cube(n)<<endl;
     return 0;
 }
-/*2. Create an inline function to return the maximum of two numbers.
-->
+*/
+/*
+Create an inline function to return the maximum of two numbers.
+
 #include <iostream>
 using namespace std;
 inline int maxNum(int a, int b) {
@@ -26,9 +30,10 @@ int main() {
     cout << "Maximum = " << maxNum(n1,n2) << endl;
     return 0;
 }
+*/
+/*
+Write an inline function to find the square root of a number.
 
-3. Write an inline function to find the square root of a number.
-->
 #include <iostream>
 using namespace std;
 inline int square(int s) {
@@ -41,9 +46,10 @@ int main() {
     cout << "Square-Root:" << square(n) << endl;
     return 0;
 }
+*/
+/*
+Demonstrate the difference between inline and normal functions using a simple example.
 
-4. Demonstrate the difference between inline and normal functions using a simple example.
-->
 #include <iostream>
 using namespace std;
 inline int square(int x) {
@@ -60,15 +66,17 @@ int main() {
     cout << "Normal function: " << normalFunc(n) << endl;
     return 0;
 }
+*/
 
-5. Create a class MathOp and define an inline function inside the class to multiply two
+/*Create a class MathOp and define an inline function inside the class to multiply two
 numbers.
-->
+*/
+
 #include <iostream>
 using namespace std;
 class MathOp {
 public:
-    int multiply(int a, int b) {
+    inline int multiply(int a, int b) {
         return a * b;
     }};
 int main(){
@@ -78,4 +86,4 @@ int main(){
     cin >> n1>> n2;
     cout << "Multiplication = " << m.multiply(n1,n2) << endl;
     return 0;
-}*/
+}

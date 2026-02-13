@@ -1,65 +1,46 @@
+/*
+Demonstration of virtual destructor 
+*/
 #include <iostream>
 using namespace std;
-
 class Base {
 public:
+// Virtual destructor ensures derived destructors are called
     virtual ~Base() {
         cout << "Base Destructor" << endl;
     }
 };
-
 class Derived : public Base {
+// dynamic memory owned by Derived
+    int* data; 
 public:
-    ~Derived() {
-        cout << "Derived Destructor" << endl;
-    }
-};
-
-int main() {
-    Base* ptr = new Derived();
-    delete ptr;   // ✅ correct place
-}
-
-//Explaination:-Inside ~Derived(), statements execute top-to-bottom.delete ptr first calls the pointed object’s destructor, then frees its memory.
-
-/*#include <iostream>
-using namespace std;
-
-// Base class
-class Base {
-public:
-    // Virtual destructor ensures derived destructors are called
-    virtual ~Base() {
-        cout << "Base Destructor" << endl;
-    }
-};
-
-// Derived class
-class Derived : public Base {
-    int* data;   // dynamic memory owned by Derived
-public:
-    // Constructor allocates memory
+// Constructor allocates memory in heap and at the  same time initialize data member. 
     Derived() {
         data = new int(10);
         cout << "Derived Constructor" << endl;
     }
 
-    // Destructor frees memory
+//Inside ~Derived(), statements execute top-to-bottom.delete ptr first calls the pointed object’s destructor, then frees its memory.
     ~Derived() {
-        delete data;      // free memory
-        data = nullptr;   // good practice
+// free memory
+        delete data;  
+// good practice
+        data = nullptr;   
         cout << "Derived Destructor" << endl;
     }
 };
-
 int main() {
-    // Create Derived object through a Base pointer
+// Create Derived object through a Base pointer
     Base* ptr = new Derived();
-
-    // Delete the object properly
-    delete ptr;  // calls Derived destructor first, then Base destructor
-
+// Delete the object properly
+// Calls Derived destructor first, then Base destructor
+    delete ptr;  
     return 0;
-}*/
-
+}
+/*
+Output:
+Derived Constructor
+Derived Destructor
+Base Destructor
+*/
 

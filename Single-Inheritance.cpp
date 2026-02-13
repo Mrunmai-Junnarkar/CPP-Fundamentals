@@ -7,8 +7,9 @@ public:
         cout << "I am the Father." << endl;
     }
 };
-                             
-class Son : public Father { // Derived class (Child inherits Father)
+
+// Derived class (Child inherits Father)                         
+class Son : public Father { 
 public:
     void sonInfo() {
         cout << "I am the Son." << endl;
@@ -16,9 +17,13 @@ public:
 };
 int main() {
     Son s;
-    s.fatherInfo(); // from base class
-    s.sonInfo();    // from derived class
+// from base class
+    s.fatherInfo(); 
+// from derived class
+    s.sonInfo();   
     return 0;
 }
-//Output:I am the Father.
-//       I am the Son.
+/*Output:
+I am the Father.
+I am the Son.
+*/

@@ -1,12 +1,13 @@
-/*what is exception?
-->Exception is a unpredictable error that holds program.
+/*
+what is exception
+Exception is a unpredictable error that holds program.
 
 What is exception handling?
-->Exception handling is a mechanism in C++ used to detect and handle runtime errors 
- so that a program does not terminate unexpectedly.
+Exception handling is a mechanism in C++ used to detect and handle runtime errors 
+so that a program does not terminate unexpectedly.
 
 Why exception handling is needed?
-->Without exception handling:
+Without exception handling:
 Program crashes
 No chance to recover
 Poor user experience
@@ -16,17 +17,17 @@ Errors are handled gracefully
 Program continues or exits safely
 
 Purpose?
-->try
+try
 Purpose:
 To place the code that may cause an error (exception).
-->throw
+throw
 Purpose:
 To generate (raise) an exception when an error occurs.
-->catch
+catch
 Purpose:
 To handle the exception thrown in the try block.
-->thrown → the exception that is raised*/
-
+thrown → the exception that is raised
+*/
 
 #include <iostream>
 using namespace std;
@@ -40,7 +41,8 @@ int main()
     {
         if (b == 0)
         {
-            throw b;   // throw exception
+ // throw exception
+            throw b;  
         }
         cout << "Result = " << a / b << endl;
     }

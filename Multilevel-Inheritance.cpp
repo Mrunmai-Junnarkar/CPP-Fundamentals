@@ -20,9 +20,12 @@ public:
 };
 int main() {
     Son s;
-    s.grandFatherInfo();  // from GrandFather
-    s.fatherInfo();       // from Father
-    s.sonInfo();          // from Son
+// from GrandFather
+    s.grandFatherInfo(); 
+// from Father
+    s.fatherInfo();
+// from Son      
+    s.sonInfo();        
     return 0;
 }
 

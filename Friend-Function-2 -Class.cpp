@@ -1,8 +1,9 @@
 //Friend Function accessing private data members of 2 classes:
-
 #include <iostream>
 using namespace std;
-class B;   // forward declaration
+// forward declaration
+class B;  
+
 class A {
 private:
     int x;
@@ -11,8 +12,8 @@ public:
         cout << "Enter value for x: ";
         cin >> x;
     }
-
-    friend void add(A, B);  // friend function
+// friend function
+    friend void add(A, B); 
 };
 class B {
 private:
@@ -22,7 +23,8 @@ public:
         cout << "Enter value for y: ";
         cin >> y;
     }
-    friend void add(A, B);  // friend function
+// friend function
+    friend void add(A, B);  
 };
 // friend function definition
 void add(A obj1, B obj2) {
@@ -36,4 +38,9 @@ int main() {
     add(a, b);
     return 0;
 }
-
+/*
+Output:
+Enter value for x: 10
+Enter value for y: 20
+Sum = 30
+*/

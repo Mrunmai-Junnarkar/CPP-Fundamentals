@@ -3,17 +3,22 @@
 using namespace std;
 class Demo {
 private:
-    const int value;   // const data member
+
+// const data member
+    const int value;  
+
 public:
-    // Initialize const member using initializer list
+// Initialize const member using initializer list
     Demo(int v) : value(v) {}
+
     void display() {
         cout << "Value = " << value << endl;
     }
     
     };
 int main() {
-    Demo obj(50);   // Pass value during object creation
+// Pass value during object creation
+    Demo obj(50);   
     obj.display();
     return 0;
 }

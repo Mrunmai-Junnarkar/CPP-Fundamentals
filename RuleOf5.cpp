@@ -1,4 +1,5 @@
-/*🔷 Why Rule of Five is Needed
+/*
+Why Rule of Five is Needed
 
 Because your class uses:
 int* id;
@@ -11,7 +12,7 @@ Copy assignment	           Safe overwrite
 Move constructor	   Fast transfer
 Move assignment	           Fast overwrite
 
-🔷 What Happens If You Skip One?
+ What Happens If You Skip One?
 Missing	Result
 
 Destructor	          Memory leak
@@ -30,10 +31,11 @@ class MyDetails {
     float *sal;
 
 public:
-    // Default constructor
+// Default constructor
     MyDetails() : sal(nullptr) {}
 
-    // Parameterized constructor
+
+// Parameterized constructor
     MyDetails(string n, int i, float s) {
         cout << "Parameterized Constructor" << endl;
         name = n;
@@ -41,7 +43,7 @@ public:
         sal = new float(s);
     }
 
-    // Copy constructor
+// Copy constructor
     MyDetails(const MyDetails &m) {
         cout << "Copy Constructor" << endl;
         name = m.name;
@@ -49,11 +51,12 @@ public:
         sal = new float(*m.sal);
     }
 
-    // Copy assignment operator
+// Copy assignment operator
     MyDetails& operator=(const MyDetails &m) {
         cout << "Copy Assignment Operator" << endl;
         if (this != &m) {
-            delete sal; // Free old memory
+// Free old memory
+            delete sal; 
             name = m.name;
             id = m.id;
             sal = new float(*m.sal);
@@ -61,29 +64,32 @@ public:
         return *this;
     }
 
-    // Move constructor
+// Move constructor
     MyDetails(MyDetails &&m) noexcept {
         cout << "Move Constructor" << endl;
         name = std::move(m.name);
         id = m.id;
         sal = m.sal;
-        m.sal = nullptr; // Leave m in a safe state
+ // Leave m in a safe state
+        m.sal = nullptr;
     }
 
-    // Move assignment operator
+// Move assignment operator
     MyDetails& operator=(MyDetails &&m) noexcept {
         cout << "Move Assignment Operator" << endl;
         if (this != &m) {
-            delete sal; // Free old memory
+// Free old memory
+            delete sal; 
             name = std::move(m.name);
             id = m.id;
             sal = m.sal;
-            m.sal = nullptr; // Leave m in a safe state
+// Leave m in a safe state
+            m.sal = nullptr; 
         }
         return *this;
     }
 
-    // Destructor
+// Destructor
     ~MyDetails() {
         delete sal;
         cout << "Destructor called" << endl;
@@ -98,20 +104,20 @@ public:
 
 int main() {
     MyDetails m1("Mrunmai", 1111, 3.5);
-    MyDetails m2 = m1; // Copy constructor
+    MyDetails m2 = m1; 
     m2.show();
 
     MyDetails m3("Mrunmai", 1111, 2.5);
     m3.show();
 
-    m3 = m1; // Copy assignment operator
+    m3 = m1; 
     m3.show();
 
-    MyDetails m4 = std::move(m3); // Move constructor
+    MyDetails m4 = std::move(m3); 
     m4.show();
 
     MyDetails m5("Test", 999, 4.0);
-    m5 = std::move(m4); // Move assignment operator
+    m5 = std::move(m4); 
     m5.show();
 
     return 0;

@@ -1,8 +1,9 @@
 //Making two class friend 
-
 #include <iostream>
 using namespace std;
-class Calculator;  // forward declaration
+// forward declaration
+class Calculator; 
+ 
 class Numbers {
 private:
     int a, b;
@@ -11,8 +12,10 @@ public:
         a = 5; 
         b = 15; 
     }
-    // Making whole class Calculator a friend
+
+// Making whole class Calculator a friend
     friend class Calculator;
+
 };
 class Calculator {
 public:
@@ -30,3 +33,8 @@ int main() {
     c.multiply(n);
     return 0;
 }
+/*
+Output:
+Addition: 20
+Multiplication: 75
+*/

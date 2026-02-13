@@ -1,11 +1,13 @@
-/* Function Calling by Reference 
-->Function can directly Access & Modify the Original Variables 
+/*
+Function Calling by Reference 
+Function can directly Access & Modify the Original Variables 
 because we passed alias/reference(another name) using & as Formal parameters.
-
-Cannot refer to another variable later once reference is bounded it cannot be re-assigned.*/
+Cannot refer to another variable later once reference is bounded it cannot be re-assigned.
+*/
 
 #include <iostream>
 using namespace std;
+
 //formal Args are Reference variables
 int numAdd(int &x,int &y,int &a, int &s){
 a=x+y;

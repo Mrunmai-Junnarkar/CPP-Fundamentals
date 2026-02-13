@@ -23,8 +23,11 @@ public:
 };
 int main() {
     Child c;
-    c.fatherInfo();  // from Father
-    c.motherInfo();  // from Mother
-    c.childInfo();   // from Child
+// from Father
+    c.fatherInfo();  
+// from Mother
+    c.motherInfo(); 
+// from Child
+    c.childInfo();  
     return 0;
 }

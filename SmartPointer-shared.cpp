@@ -37,10 +37,10 @@ int main() {
   
   return 0;
 }
-//How create multiple objects in heap
+/*How create multiple objects in heap
 shared_ptr<Rectangle> r1 = make_shared<Rectangle>(10, 5);
 shared_ptr<Rectangle> r2 = make_shared<Rectangle>(4, 6);
 
 cout << r1->area() << endl;
 cout << r2->area() << endl;
-
+*/

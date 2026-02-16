@@ -1,11 +1,14 @@
 /*
-Pure virtual function is a function which is assign to 0 that means it does not have its own implementation.
-When any class contains at list 1 pure vitrual or more than one functions in it that class is known as abstract class.
+Pure virtual function is a function which is assign to 0
+ that means it does not have its own implementation.
+When any class contains at list 1 pure vitrual 
+or more than one functions in it that class is known as abstract class.
 */
 #include <iostream>
 using namespace std;
 class Shape {
-//Sides is the data member which is only accessible inside the same class and inside the derived class not from outside.
+//Sides is the data member which is only accessible inside the same class 
+// and inside the derived class not from outside.
 protected:
     int sides;
 
@@ -35,7 +38,8 @@ leading to incomplete cleanup.
 class Triangle : public Shape {
 public:
 /*
-Calling explicitliy abstract class constructor using initializer list to initialize data member of base class.
+Calling explicitliy abstract class constructor 
+using initializer list to initialize data member of base class.
 */
     Triangle() : Shape(3) {   
         cout << "Triangle constructor called" << endl;
